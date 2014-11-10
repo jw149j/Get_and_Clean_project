@@ -3,12 +3,25 @@ merge_and_label<-function(){
   activities<-read.table("activity_labels.txt")
 # get listing of integer/position - feature label  mappings
   featureLabels<-read.table("features.txt")
+  featureLabels<-featureLabels[,2]
+  requiredFeats<-c(grep("mean",feats[,2],ignore.case=T),grep("std",feats[,2],ignore.case=T))
+  requiredFeats<-requiredFeats+2;
+  featureLabels<-c("Subject","Activity",featureLabels)
+  requiredFeats<-c(1:2,requiredFeats)
 # get the training set:
   trainSet<-do_cbind("train")
   print(trainSet)
 # get the test set  
   testSet<-do_cbind("test")
+  print(dim(trainSet));print(dim(testSet))
   if((trainSet==-1) || (testSet ==-1)) return("the contents are NOT matched by number of rows")
+  totalSet<-rbind(trainSet,testSet)
+  print(dim(totalSet))
+  reqTable<-totalSet[,requiredFeats]
+  print(dim(reqTable))
+  
+  featureLabels[requiredFeats]
+
 # 
 }
 
