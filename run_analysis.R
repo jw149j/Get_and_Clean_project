@@ -1,28 +1,48 @@
 merge_and_label<-function(){
 #  get listing of integer - activity label mappings
   activities<-read.table("activity_labels.txt")
-# get listing of integer/position - feature label  mappings
-  featureLabels<-read.table("features.txt")
+# get listing of integer/position - feature label  mappings as strings NOT factors
+  featureLabels<-read.table("features.txt",stringsAsFactors=F)
+# extract the feature names as a character vector
   featureLabels<-featureLabels[,2]
-  requiredFeats<-c(grep("mean",feats[,2],ignore.case=T),grep("std",feats[,2],ignore.case=T))
-  requiredFeats<-requiredFeats+2;
-  featureLabels<-c("Subject","Activity",featureLabels)
-  requiredFeats<-c(1:2,requiredFeats)
-# get the training set:
+# extract the indices of all feature names containing the strings mean or std (case insensitive)
+  requiredFeats<-c(grep("mean",featureLabels,ignore.case=T),grep("std",featureLabels,ignore.case=T))
+# sort to restore the order found in the original table
+  requiredFeats<-sort(requiredFeats)
+# add the subject and activity values to the lhs of the training data
   trainSet<-do_cbind("train")
-  print(trainSet)
-# get the test set  
+# add the subject and activity values to the lhs of the test data
   testSet<-do_cbind("test")
-  print(dim(trainSet));print(dim(testSet))
-  if((trainSet==-1) || (testSet ==-1)) return("the contents are NOT matched by number of rows")
+# concatenate the test and data set
   totalSet<-rbind(trainSet,testSet)
-  print(dim(totalSet))
+# prepend the extra subject and activity labels to the list of feature labels  
+  featureLabels<-c(c("Subject","Activity"),featureLabels)
+# adjust the indexing of the required indexes to account for these additions
+  requiredFeats<-requiredFeats+2
+# and add in the indices of these additions
+  requiredFeats<-c(1:2,requiredFeats)
+#  print(paste("++++++++++++++++++++",requiredFeats))
+#  print(featureLabels[requiredFeats])      
+# get the training set:
+
+#  print(trainSet)
+# get the test set  
+#  print(dim(trainSet));print(dim(testSet))
+# the three files MUST , return an error if not contain identical numbers of rows
+  if((trainSet==-1) || (testSet ==-1)) return("the contents are NOT matched by number of rows")
+#  totalSet<-rbind(trainSet,testSet)
+#  print(dim(totalSet))
+# d
+# subset the full feature table to only the required features 
   reqTable<-totalSet[,requiredFeats]
   print(dim(reqTable))
-  
-  featureLabels[requiredFeats]
+# convert to data.frame
+colnames(reqTable)<-featureLabels[requiredFeats]
 
-# 
+reqTable<-as.data.frame(reqTable)
+
+head(reqTable)
+
 }
 
 do_cbind<-function(d){
