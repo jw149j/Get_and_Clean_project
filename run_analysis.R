@@ -41,8 +41,9 @@ colnames(reqTable)<-featureLabels[requiredFeats]
 
 reqTable<-as.data.frame(reqTable)
 
-head(reqTable)
-
+reqTable$Activity<-ordered(reqTable$Activity,  levels = activities[,1],  labels = activities[,2])
+head(reqTable,50)
+reqTable
 }
 
 do_cbind<-function(d){
