@@ -3,18 +3,18 @@ Get_and_Clean_project
 
 The assessed programming project required for the Getting & Cleaning Data course
 
-||||||||||||||||||||||||||||||||||||||||||||||[ run_analysis() ]|||||||||||||||||||||||||||||||||||||||||||||
-||| Function to perform the data cleaning and summarizing specified in the "Getting and Cleaning Data"
-||| course as listed in the programming project specifications. A call to this function  will perform
-||| the entire task
-||| It will work as specified if it is run while the setwd() specifies the Global Environment as
-||| the top level directory of the UCIHAR dataset
-||| The initial merging, cleaning and selection of the data and assignment of meaningful labels
-||| is perfomed by the function merge_subset_and_label()
-||| This dataset (in the form of a data frame) is subsequently summarized by the function summary_mean(df)
-||| by aggregating subsets of data corresponding to individual subject/activity labels, taking the 
-||| average of the mean values for each subset. This data is written to a text file named "data_mean_summ.txt"
-||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+||||||||||||||||||||||||||||||||||||||||||||||[ run_analysis() ]|||||||||||||||||||||||||||||||||||||||||||||  
+||| Function to perform the data cleaning and summarizing specified in the "Getting and Cleaning Data"  
+||| course as listed in the programming project specifications. A call to this function  will perform  
+||| the entire task  
+||| It will work as specified if it is run while the setwd() specifies the Global Environment as  
+||| the top level directory of the UCIHAR dataset  
+||| The initial merging, cleaning and selection of the data and assignment of meaningful labels  
+||| is perfomed by the function merge_subset_and_label()  
+||| This dataset (in the form of a data frame) is subsequently summarized by the function summary_mean(df)  
+||| by aggregating subsets of data corresponding to individual subject/activity labels, taking the   
+||| average of the mean values for each subset. This data is written to a text file named "data_mean_summ.txt"  
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||  
 
 
 |||||||||||||||||||||||||||||||||||||||[ merge_subset_and_label() ]||||||||||||||||||||||||||||||||||||||||||
