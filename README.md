@@ -3,7 +3,7 @@ Get_and_Clean_project
 
 The assessed programming project required for the Getting & Cleaning Data course
 
-###||||||||||||||||||||||||||||||||||||||||||||||[run_analysis()]|||||||||||||||||||||||||||||||||||||||||||||  
+###[ run_analysis() ]|||||||||||||||||||||||||||||||||||||||||||||  
 ||| Function to perform the data cleaning and summarizing specified in the "Getting and Cleaning Data"  
 ||| course as listed in the programming project specifications. A call to this function  will perform  
 ||| the entire task  
@@ -17,7 +17,7 @@ The assessed programming project required for the Getting & Cleaning Data course
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||  
 
 
-###|||||||||||||||||||||||||||||||||||||||[merge_subset_and_label()]||||||||||||||||||||||||||||||||||||||||||  
+###[ merge_subset_and_label() ]||||||||||||||||||||||||||||||||||||||||||  
 |||Function to :  
 |||==(1) read the files summarising the numerical/positional codes and explicit labels for the   
 |||   features recorded in these datasets   
@@ -34,7 +34,7 @@ The assessed programming project required for the Getting & Cleaning Data course
 ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||  
 
 
-###|||||||||||||||||||||||||||||||||||||||||||||||||||[do_cbind<-function(d)]|||||||||||||||||||||||||||||||||||||  
+###[ do_cbind<-function(d) ]|||||||||||||||||||||||||||||||||||||  
 ||| Function to :  
 ||| ==(1) accept a token ("test" or "train") to enable the explicit generation of valid  
 |||    filenames for i) the codes for the activity associated with each observation ii) the subject  
@@ -48,7 +48,7 @@ The assessed programming project required for the Getting & Cleaning Data course
 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||  
 
 
-###|||||||||||||||||||||||||||||||[summary_mean(df)]||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||  
+###[ summary_mean(df) ]||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||  
 ||| Function to:  
 ||| ==(1)take a tidied data set in data frame format  
 ||| ==(2) discard all columns where the label indicates the data consists of standard   
